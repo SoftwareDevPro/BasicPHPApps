@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dice Roll Animations</title>
+        <link rel="stylesheet" type="text/css" href="dice_roll_animations.css" />
+        <link rel="icon" href="dice_roll_favicon.ico" type="image/x-icon" />
+    </head>
+    <body>
+
+            <script>
+                function getRandomInt(max) {
+                    return Math.floor(Math.random() * Math.floor(max));
+                }
+
+                function baseName(str) {
+                    let base = new String(str).substring(str.lastIndexOf('/') + 1); 
+                    if (base.lastIndexOf(".") != -1) {
+                        base = base.substring(0, base.lastIndexOf("."));
+                    }       
+                    return base;
+                }                
+
+            </script>
+
+            <div>
+                <img id="die1" class=".die" />
+            </div>
+            <div>
+                <img id="die2" class=".die" /> 
+            </div>
+
+            <script>
+
+                let dice_roll_images = [
+                    "dice_images/01.jpg",
+                    "dice_images/02.jpg",
+                    "dice_images/03.jpg",
+                    "dice_images/04.jpg",
+                    "dice_images/05.jpg",
+                    "dice_images/06.jpg"
+                ];
+
+                let num_seconds = 2 + getRandomInt(6);
+
+                document.getElementById("die1").src = 
+                    dice_roll_images[getRandomInt(5)];
+                
+                document.getElementById("die2").src = 
+                    dice_roll_images[getRandomInt(5)];
+
+                let interval = setInterval(function() {
+                    
+                    document.getElementById("die1").src = 
+                        dice_roll_images[getRandomInt(5)];
+                
+                    document.getElementById("die2").src = 
+                        dice_roll_images[getRandomInt(5)];
+
+                }, 250);
+
+                setTimeout(function() {
+                    
+                    clearInterval(interval);
+                    
+                    console.log("die1: " + parseInt(baseName(document.getElementById("die1").src)));
+                    console.log("die2: " + parseInt(baseName(document.getElementById("die2").src)));
+                
+                }, num_seconds * 1000);
+                                                                        
+            </script>
+    </body>
+</html>
+

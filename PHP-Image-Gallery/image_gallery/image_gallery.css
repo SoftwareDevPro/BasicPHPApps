@@ -1,0 +1,14 @@
+
+.upload_form {
+    border: 2px solid;
+    margin: 20px;
+    width: 30%;
+}
+
+.thumbnail {
+    height: 50%;
+    width: 20%;
+    display: inline-block;
+}
+
+

@@ -1,0 +1,33 @@
+
+.dice-input {
+    border: 3px solid;
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.number-guess-label {
+    margin: 20px;
+}
+
+.number-guess-input {
+    margin: 20px;
+}
+
+.number-guess-submit {
+    margin: 20px;
+}
+
+.die {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.result {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+}

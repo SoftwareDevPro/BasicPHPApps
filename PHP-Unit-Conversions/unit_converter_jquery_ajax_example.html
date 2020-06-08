@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Unit Converter Jquery AJAX Example</title>
+        <script src="js/jquery-3.4.1.js"></script>
+    </head>
+    <body>
+            <script>
+                function loadValue(unittype, direction, val, id) {
+
+                    let url = "http://localhost/unit_converter_v2_webservice.php?" + unittype + "=" + val + "&direction=" + direction;
+
+                    $.getJSON(url, function(data) {
+                        console.log(data);
+                        document.getElementById(id).innerHTML = data.value;
+                    });                
+                }
+
+            </script>
+
+
+            <!--
+            // http://localhost/unit_converter_v2_webservice.php?temperature=32&direction=f_to_c: {"value":0} 
+            -->
+            Fahrenheit to Celsius: 32 deg F, Result: 
+            <span id="f_to_c"></span>
+            <script>
+                loadValue("temperature", "f_to_c", 32, "f_to_c");
+            </script>
+            <br>
+            <br>
+
+            <!--
+            // http://localhost/unit_converter_v2_webservice.php?temperature=0&direction=c_to_f : {"value":32} 
+            -->
+            Celsius to Fahrenheit: 0 deg C, Result: 
+            <span id="c_to_f"></span>
+            <script>
+                loadValue("temperature", "c_to_f", 0, "c_to_f");
+            </script>
+            <br>
+            <br>
+
+            <!--
+            // http://localhost/unit_converter_v2_webservice.php?temperature=32&direction=f_to_k: {"value":273.15000000000003} 
+            -->
+            Fahrenheit to Kelvin: 32 deg F, Result: 
+            <span id="f_to_k"></span>
+            <script>
+                loadValue("temperature", "f_to_k", 32, "f_to_k");
+            </script>
+            <br>
+            <br>
+
+            <!--
+            // http://localhost/unit_converter_v2_webservice.php?temperature=0&direction=c_to_k: {"value":273.15} 
+            -->
+            Celsius to Kelvin: 0 deg C, Result: 
+            <span id="c_to_k"></span>
+            <script>
+                loadValue("temperature", "c_to_k", 0, "c_to_k");
+            </script>
+            <br>
+            <br>
+
+            <!--
+            // http://localhost/unit_converter_v2_webservice.php?temperature=0&direction=k_to_f : {"value":-459.67} 
+            -->
+            Kelvin to Fahrenheit: 0 deg K, Result: 
+            <span id="k_to_f"></span>
+            <script>
+                loadValue("temperature", "k_to_f", 0, "k_to_f");
+            </script>
+            <br>
+            <br>
+
+            <!--
+            // http://localhost/unit_converter_v2_webservice.php?temperature=0&direction=k_to_c: {"value":-273.15} 
+            -->
+            Kelvin to Celsius: 0 deg K, Result: 
+            <span id="k_to_c"></span>
+            <script>
+                loadValue("temperature", "k_to_c", 0, "k_to_c");
+            </script>
+            <br>
+            <br>
+
+            <!--
+            // http://localhost/unit_converter_v2_webservice.php?mass=1&direction=p_to_k : {"value":0.4535147392290249} 
+            -->
+            Pounds to Kilos: 1, Result: 
+            <span id="p_to_k"></span>
+            <script>
+                loadValue("mass", "p_to_k", 1, "p_to_k");
+            </script>
+            <br>
+            <br>
+
+            <!--
+            // http://localhost/unit_converter_v2_webservice.php?mass=1&direction=k_to_p : {"value":2.2046} 
+            -->
+            Kilos to Pounds: 1, Result: 
+            <span id="k_to_p"></span>
+            <script>
+                loadValue("mass", "k_to_p", 1, "k_to_p");
+            </script>
+            <br>
+            <br>
+
+            <!--
+            // http://localhost/unit_converter_v2_webservice.php?distance=1&direction=m_to_y : {"value":1.094} 
+            -->
+            Meters to Yards: 1, Result: 
+            <span id="m_to_y"></span>
+            <script>
+                loadValue("distance", "m_to_y", 1, "m_to_y");
+            </script>
+            <br>
+            <br>
+
+            <!--
+            // http://localhost/unit_converter_v2_webservice.php?distance=1&direction=y_to_m : {"value":0.9140767824497257} 
+            -->
+            Yards to Meters: 1, Result: 
+            <span id="y_to_m"></span>
+            <script>
+                loadValue("distance", "y_to_m", 1, "y_to_m");
+            </script>
+            <br>
+            <br>
+
+    </body>
+</html>
+
